@@ -1,0 +1,42 @@
+version: '3'
+
+tasks:
+  run: 
+    cmds:
+      - task install
+      
+  act:
+    cmds:
+      - act
+
+  clean:
+    cmds:
+      - sh ./scripts/taskfile/clean.sh
+      
+  fmt:
+    cmds:
+    - sh ./scripts/makefile/fmt.sh
+
+  lint:
+    cmds:
+    - sh ./scripts/taskfile/lint.sh
+
+  test:
+    cmds:
+      - sh ./scripts/taskfile/test.sh
+        
+  database:
+    cmds:
+      - sh ./scripts/taskfile/database.sh 
+      
+  coverage:
+    cmds:
+      - sh ./scripts/taskfile/coverage.sh
+
+  install:
+    cmds:
+      - sh ./scripts/taskfile/install.sh
+
+  watch:
+    cmds:
+      - cd ./scripts/watch && go run .
