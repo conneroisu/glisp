@@ -19,7 +19,8 @@ func (f HandlerFunc) ServeRPC(w ResponseWriter, r *domain.Request) {
 	f.ServeRPC(w, r)
 }
 
-// ResponseWriter is a writer for a response
+// ResponseWriter is a writer for a response it implements the io.Writer
+// interface.
 type ResponseWriter interface {
 	Write(data []byte) (int, error)
 }
@@ -63,7 +64,8 @@ var defaultMux ServeMux
 // A mapping is a collection of key-value pairs where the keys are unique.
 // A zero mapping is empty and ready to use.
 //
-// A mapping tries to pick a representation that makes [mapping.find] most efficient.
+// A mapping tries to pick a representation that makes [mapping.find] most
+// efficient.
 //
 // It does this by using a slice for small maps and a map for large maps.
 type mapping[K comparable, V any] struct {

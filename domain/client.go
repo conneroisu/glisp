@@ -1,6 +1,9 @@
 package domain
 
 // ClientCapabilities is a struct for the client capabilities
+//
+// Microsoft LSP Docs:
+// https://microsoft.github.io/language-server-protocol/specifications/specification-current/#clientCapabilities
 type ClientCapabilities struct {
 	// TextDocumentSync is the text document sync for the client capabilities.
 	TextDocumentSync int `json:"textDocumentSync"`
